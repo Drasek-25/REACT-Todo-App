@@ -8,7 +8,7 @@ function App() {
       <div className='col header'>
         <h1>Todo App</h1>
       </div>
-      <MainContent/>
+      <MainContent />
     </div>
   );
 }

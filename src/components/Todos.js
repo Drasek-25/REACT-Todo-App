@@ -1,15 +1,14 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-function Todo(){
-    return(
+function Todo() {
+    const todoList = ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4']
+    return (
         <div className='col todos'>
             <h2>Todos</h2>
-            <TodoItem/>
-            <TodoItem/>
-            <TodoItem/>
-            <TodoItem/>
-            
+            {todoList.map(val => (
+                <TodoItem value={val} />
+            ))}
         </div>
     );
 }
