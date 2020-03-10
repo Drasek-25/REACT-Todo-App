@@ -13,9 +13,12 @@ function TodoValueSwitch({ index, value, toggle, updateTodo, toggleSwitch }) {
     >{value}</span>;
 
     let myInput = <input
+        autoFocus='true'
+        onFocus={e => e.currentTarget.select()}
+        className='todoText'
         type='text'
         value={value}
-        onChange={(evt) => updateTodo(evt.target.value, index)}
+        onChange={(e) => updateTodo(e.target.value, index)}
         onKeyDown={(e) => handleClick(e)}
     ></input>;
 
