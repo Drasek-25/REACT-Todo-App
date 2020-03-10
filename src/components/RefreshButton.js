@@ -1,8 +1,12 @@
 import React from 'react';
 
-function RefreshButton(){
-    return(
-        <button type='submit' className='button smallButton refreshButton'>↻</button>
+function RefreshButton({ toggleSwitch }) {
+    return (
+        <button
+            type='submit'
+            className='button smallButton refreshButton'
+            onClick={() => toggleSwitch()}
+        >↻</button>
     );
 }
 

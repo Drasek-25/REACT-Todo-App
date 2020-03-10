@@ -1,8 +1,12 @@
 import React from 'react';
 
-function DeleteButton(){
-    return(
-        <button type='submit' className='button smallButton deleteButton'>X</button>
+function DeleteButton({ index, deleteTodo }) {
+    return (
+        <button
+            type='submit'
+            className='button smallButton deleteButton'
+            onClick={() => deleteTodo(index)}
+        >X</button>
     );
 }
 
