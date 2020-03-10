@@ -7,12 +7,24 @@ function Todo() {
         ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4']
     );
 
-    // [
-    //     {'0': 'List Item 1'},
-    //     {'1': 'List Item 2'},
-    //     {'': 'List Item 3'},
-    //     {'0': 'List Item 4'}
-    // ]
+    // {
+    //     0 : {
+    //         id: 0,
+    //         name: 'List Item 1'
+    //     },
+    //     1 : {
+    //         id: 1,
+    //         name: 'List Item 2'
+    //     },
+    //     2 : {
+    //         id: 2,
+    //         name: 'List Item 3'
+    //     },
+    //     3 : {
+    //         id: 3,
+    //         name: 'List Item 4'
+    //     },
+    // }
 
 
     const deleteTodo = (index) => {
