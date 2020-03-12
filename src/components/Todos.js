@@ -1,43 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TodoItem from './TodoItem';
 
-function Todo() {
-
-    const [todos, setTodos] = useState(
-        ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4']
-    );
-
-    // {
-    //     0 : {
-    //         id: 0,
-    //         name: 'List Item 1'
-    //     },
-    //     1 : {
-    //         id: 1,
-    //         name: 'List Item 2'
-    //     },
-    //     2 : {
-    //         id: 2,
-    //         name: 'List Item 3'
-    //     },
-    //     3 : {
-    //         id: 3,
-    //         name: 'List Item 4'
-    //     },
-    // }
+function Todo({ todos, deleteTodo, updateTodo }) {
 
 
-    const deleteTodo = (index) => {
-        const newTodos = [...todos];
-        newTodos.splice(index, 1);
-        setTodos(newTodos);
-    }
-
-    const updateTodo = (value, index) => {
-        const newTodos = [...todos];
-        newTodos[index] = value;
-        setTodos(newTodos)
-    }
 
     return (
         <div className='col todos'>
