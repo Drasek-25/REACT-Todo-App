@@ -40,12 +40,15 @@ function MainContent() {
         newTodos[index] = value;
         setTodos(newTodos)
     }
+    const addTodo = (value)=>{
+        setTodos([...todos, value])
+    }
 
 
     return (
         <div className='col mainContent'>
             <Todos todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
-            <AddItem title='Add Todo' />
+            <AddItem title='Add Todo' addTodo={addTodo} />
         </div>
     );
 }

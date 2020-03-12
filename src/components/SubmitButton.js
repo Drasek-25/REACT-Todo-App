@@ -1,8 +1,15 @@
 import React from 'react'
 
-function SubmitButton(){
+function SubmitButton({addTodo, inputText, defaultValue, setInputText}){
     return(
-        <button type='submit' className='largeButton submit'>Submit</button>
+        <button 
+        type='submit' 
+        className='largeButton submit'
+        onClick={()=>{
+            addTodo(inputText);
+            setInputText(defaultValue);
+        }}
+        >Submit</button>
     );
 }
 
