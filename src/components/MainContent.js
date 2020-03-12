@@ -5,45 +5,32 @@ import Todos from './Todos'
 function MainContent() {
 
     const [todos, setTodos] = useState(
-        ['List Item 1', 'List Item 2', 'List Item 3', 'List Item 4']
+        [
+            { id: 1, value: 'List Item 1' },
+            { id: 2, value: 'List Item 2' },
+            { id: 3, value: 'List Item 3' },
+            { id: 4, value: 'List Item 4' }
+        ]
     );
-
-
-    // [
-    //     {id:1, value:'List Item 1'},
-    //     {id:2, value:'List Item 2'},
-    //     {id:3, value:'List Item 3'},
-    //     {id:4, value:'List Item 4'}
-    // ]
-
-    // const [todos, setTodos] = useState(
-    // [{id:1, label: 'list item 1',} 'List Item 2', 'List Item 3', 'List Item 4']
-    // );
-
-    // updateTodo(value) {
-    //    setTodos([...todos.filter(x => x.id !== value.id), ...value])
-    // }
-
-    // const updateTodo = (value, orgValue) => {
-    //     const newTodos = [...todos.filter(x => x.id !== orgValue.id), ...orgValue];
-    //     setTodos(newTodos)
-    // }
 
     const deleteTodo = (index) => {
         const newTodos = [...todos];
-        newTodos.splice(index, 1);
-        setTodos(newTodos);
+        const changeTodo = newTodos.filter(obj => obj.id !== index);
+        setTodos(changeTodo);
     }
-
     const updateTodo = (value, index) => {
         const newTodos = [...todos];
-        newTodos[index] = value;
+        const changeTodo = newTodos.filter(obj => obj.id === index);
+        changeTodo[0].value = value;
         setTodos(newTodos)
     }
-    const addTodo = (value)=>{
-        setTodos([...todos, value])
+    const addTodo = (value) => {
+        let newId = 0;
+        todos[0] && (newId = todos[todos.length - 1].id)
+        newId++;
+        const newTodo = { id: newId, value: value };
+        setTodos([...todos, newTodo])
     }
-
 
     return (
         <div className='col mainContent'>
